@@ -11,7 +11,9 @@ https://www.youtube.com/embed/JEVtVrNFb30?index=40&list=PL05umP7R6ij321zzKXK6XCQ
   - x,y,z,w(idth),h(eight),l(ength),r(oll),p(itch),y(aw)
   - assume zero roll and pitch(driving on the road)
   - difficulty depends on input: 2D image or 3D point cloud
- 
+  - detection performance is typically measured using average precision
+  - challenges: appearance/viewpoint variations, illuminations, clutter, occlusion
+  - two stage detection methods are state-of-art. Faster R-CNN, Mask R-CNN
 2D images:
   - regressing 3D boxes from monocular images(need good object size priors)
   - stereo information helps to localize the box in 3D space(but quadratic error)
@@ -33,3 +35,7 @@ PointNet stages:
   -3D bounding box regression
 
 ![image](https://github.com/hajni77/Stereo-3D-object-detection/assets/78812524/60f08378-97b0-4ab5-8a7d-2c0cc2d47d2c)
+
+3DOP
+
+![image](https://github.com/hajni77/Stereo-3D-object-detection/assets/78812524/a6067e1a-3efb-4fa2-8ce0-84094f75abc4)

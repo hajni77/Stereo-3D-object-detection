@@ -21,6 +21,7 @@ https://www.youtube.com/embed/JEVtVrNFb30?index=40&list=PL05umP7R6ij321zzKXK6XCQ
 
 Stereo
 simonella iccv 2021
+https://paperswithcode.com/paper/fcos-fully-convolutional-one-stage-object
   - 1. predict a depth map
     2. pseudo lidar
     3. standard lidar based detection

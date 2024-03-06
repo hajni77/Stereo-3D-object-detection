@@ -14,6 +14,7 @@ https://www.youtube.com/embed/JEVtVrNFb30?index=40&list=PL05umP7R6ij321zzKXK6XCQ
   - detection performance is typically measured using average precision
   - challenges: appearance/viewpoint variations, illuminations, clutter, occlusion
   - two stage detection methods are state-of-art. Faster R-CNN, Mask R-CNN
+  - Feature pyramid networks help detecting features at various scale
 - 2D images:
   - regressing 3D boxes from monocular images(need good object size priors)
   - stereo information helps to localize the box in 3D space(but quadratic error)

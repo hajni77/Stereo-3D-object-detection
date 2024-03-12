@@ -47,7 +47,7 @@ https://github.com/HKUST-Aerial-Robotics/Stereo-RCNN
 https://github.com/megvii-basedetection/bevstereo
 https://github.com/Owen-Liuyuxuan/visualDet3D
 https://github.com/mileyan/pseudo_lidar
-
+https://towardsdatascience.com/understanding-and-implementing-faster-r-cnn-a-step-by-step-guide-11acfff216b0
 
 data
 https://arxiv.org/pdf/2004.06320.pdf

@@ -44,6 +44,31 @@ PointNet stages:
 
 models:
 https://github.com/HKUST-Aerial-Robotics/Stereo-RCNN
+
+Stereo R-CNN Overview:
+Stereo R-CNN is designed to detect and associate objects in stereo imagery (left and right images) while fully exploiting both sparse and dense, semantic and geometric information.
+It extends the popular Faster R-CNN architecture to handle stereo inputs.
+The Role of ROI Align:
+ROI Align (Region of Interest Align) is a technique used to extract features from irregularly shaped regions within an image.
+In the context of Stereo R-CNN, ROI Align is applied to left and right RoIs (Region of Interest) to align their features for accurate 3D bounding box estimation.
+Here’s how it works:
+Given a 2D bounding box (RoI) in the left image, we want to align the corresponding region in the right image.
+Instead of using traditional pooling methods (which can cause misalignment due to quantization), ROI Align computes the feature values at sub-pixel locations within the RoI.
+It interpolates the feature map values at these sub-pixel positions, resulting in more precise alignment.
+This alignment ensures that the features from the left and right images are accurately matched, which is crucial for estimating the 3D position of the object.
+Network Architecture:
+The Stereo R-CNN architecture includes several components:
+Stereo Region Proposal Network (RPN): Proposes candidate regions in both left and right images.
+Extra Branches: After the stereo RPN, extra branches predict sparse keypoints, viewpoints, and object dimensions.
+Coarse 3D Bounding Box Estimation: Combining the 2D left-right boxes with the predicted dimensions, a coarse 3D bounding box is calculated.
+Dense 3D Box Alignment Module: Finally, accurate 3D bounding boxes are refined using region-based photometric alignment with left and right RoIs.
+Advantages of ROI Align in Stereo R-CNN:
+Depth-Aware Alignment: ROI Align ensures that features from corresponding regions in the left and right images are accurately aligned, considering depth information.
+Robustness: It overcomes the limitations of quantization-based pooling methods, leading to more robust 3D object detection.
+State-of-the-Art Performance: Experiments on the challenging KITTI dataset demonstrate that Stereo R-CNN outperforms existing stereo-based methods by around 30% AP (Average Precision) on both 3D detection and localization tasks.
+
+
+
 https://github.com/megvii-basedetection/bevstereo
 https://github.com/Owen-Liuyuxuan/visualDet3D
 https://github.com/mileyan/pseudo_lidar

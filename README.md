@@ -78,3 +78,6 @@ data
 https://arxiv.org/pdf/2004.06320.pdf
 
 https://armanasq.github.io/datsets/kitti/#data-format
+
+3D object detection:
+https://github.com/LiheYoung/Depth-Anything

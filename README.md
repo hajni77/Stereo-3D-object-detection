@@ -76,7 +76,7 @@ https://towardsdatascience.com/understanding-and-implementing-faster-r-cnn-a-ste
 https://github.com/swords123/IDA-3D
 data
 https://arxiv.org/pdf/2004.06320.pdf
-
+https://ar5iv.labs.arxiv.org/html/1906.06310
 https://armanasq.github.io/datsets/kitti/#data-format
 
 3D object detection:

@@ -84,3 +84,4 @@ https://github.com/LiheYoung/Depth-Anything
 
 
 https://arxiv.org/html/2309.17336v2
+https://github.com/dvlab-research/3DSSD

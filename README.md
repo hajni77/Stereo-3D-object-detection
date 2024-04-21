@@ -81,3 +81,6 @@ https://armanasq.github.io/datsets/kitti/#data-format
 
 3D object detection:
 https://github.com/LiheYoung/Depth-Anything
+
+
+https://arxiv.org/html/2309.17336v2

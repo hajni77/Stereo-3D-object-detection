@@ -86,3 +86,5 @@ https://arxiv.org/pdf/2204.00106.pdf
 
 https://arxiv.org/html/2309.17336v2
 https://github.com/dvlab-research/3DSSD
+
+https://github.com/Vegeta2020/SE-SSD?tab=readme-ov-file

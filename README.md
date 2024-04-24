@@ -78,7 +78,7 @@ data
 https://arxiv.org/pdf/2004.06320.pdf
 https://ar5iv.labs.arxiv.org/html/1906.06310
 https://armanasq.github.io/datsets/kitti/#data-format
-
+https://arxiv.org/pdf/2103.03977.pdf
 3D object detection:
 https://github.com/LiheYoung/Depth-Anything
 https://arxiv.org/pdf/2204.00106.pdf

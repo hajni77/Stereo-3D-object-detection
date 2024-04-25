@@ -82,7 +82,7 @@ https://arxiv.org/pdf/2103.03977.pdf
 3D object detection:
 https://github.com/LiheYoung/Depth-Anything
 https://arxiv.org/pdf/2204.00106.pdf
-
+https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/supported_tasks/lidar_det3d.html#qualitative-validation
 
 https://arxiv.org/html/2309.17336v2
 https://github.com/dvlab-research/3DSSD

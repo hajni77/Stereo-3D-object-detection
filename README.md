@@ -1,10 +1,10 @@
 # Stereo-3D-object-detection
 
-Research:
+3D object detection Research:
 https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/autonomous-vision/lectures/self-driving-cars/
 https://paperswithcode.com/search?q_meta=&q_type=&q=stereo+3d+object+detection
-
 https://www.youtube.com/embed/JEVtVrNFb30?index=40&list=PL05umP7R6ij321zzKXK6XCQXAaaYjQbzr
+
 - 2D object det. bounding boxes: 
   - x,y,w,h
 - 3D object det bounding boxes:
@@ -68,23 +68,24 @@ Robustness: It overcomes the limitations of quantization-based pooling methods, 
 State-of-the-Art Performance: Experiments on the challenging KITTI dataset demonstrate that Stereo R-CNN outperforms existing stereo-based methods by around 30% AP (Average Precision) on both 3D detection and localization tasks.
 
 
+Depth estimation:
+- https://github.com/megvii-basedetection/bevstereo
+- https://github.com/mileyan/pseudo_lidar
+- https://towardsdatascience.com/understanding-and-implementing-faster-r-cnn-a-step-by-step-guide-11acfff216b0
+- https://github.com/LiheYoung/Depth-Anything
 
-https://github.com/megvii-basedetection/bevstereo
-https://github.com/Owen-Liuyuxuan/visualDet3D
-https://github.com/mileyan/pseudo_lidar
-https://towardsdatascience.com/understanding-and-implementing-faster-r-cnn-a-step-by-step-guide-11acfff216b0
-https://github.com/swords123/IDA-3D
 data
-https://arxiv.org/pdf/2004.06320.pdf
-https://ar5iv.labs.arxiv.org/html/1906.06310
-https://armanasq.github.io/datsets/kitti/#data-format
-https://arxiv.org/pdf/2103.03977.pdf
+- https://arxiv.org/pdf/2004.06320.pdf
+- https://ar5iv.labs.arxiv.org/html/1906.06310
+- https://armanasq.github.io/datsets/kitti/#data-format
+- https://arxiv.org/pdf/2103.03977.pdf
+
 3D object detection:
-https://github.com/LiheYoung/Depth-Anything
-https://arxiv.org/pdf/2204.00106.pdf
-https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/supported_tasks/lidar_det3d.html#qualitative-validation
 
-https://arxiv.org/html/2309.17336v2
-https://github.com/dvlab-research/3DSSD
-
-https://github.com/Vegeta2020/SE-SSD?tab=readme-ov-file
+- https://arxiv.org/pdf/2204.00106.pdf
+- https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/supported_tasks/lidar_det3d.html#qualitative-validation
+- https://arxiv.org/html/2309.17336v2
+- https://github.com/dvlab-research/3DSSD
+- https://github.com/swords123/IDA-3D
+- https://github.com/Owen-Liuyuxuan/visualDet3D
+- https://github.com/Vegeta2020/SE-SSD?tab=readme-ov-file

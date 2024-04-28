@@ -1,0 +1,100 @@
+Metadata-Version: 2.1
+Name: pseudo-pointpillars
+Version: 0.0.0
+Summary: A small python package for CNN app
+Home-page: https://github.com/hajni77/Stereo-3D-object-detection
+Author: hajni77
+Author-email: frecskahajni@gmail.com
+Project-URL: Bug Tracker, https://github.com/hajni77/Stereo-3D-object-detection/issues
+
+# Stereo-3D-object-detection
+
+3D object detection Research:
+- https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/autonomous-vision/lectures/self-driving-cars/
+- https://paperswithcode.com/search?q_meta=&q_type=&q=stereo+3d+object+detection
+- https://www.youtube.com/embed/JEVtVrNFb30?index=40&list=PL05umP7R6ij321zzKXK6XCQXAaaYjQbzr
+
+- 2D object det. bounding boxes: 
+  - x,y,w,h
+- 3D object det bounding boxes:
+  - x,y,z,w(idth),h(eight),l(ength),r(oll),p(itch),y(aw)
+  - assume zero roll and pitch(driving on the road)
+  - difficulty depends on input: 2D image or 3D point cloud
+  - detection performance is typically measured using average precision
+  - challenges: appearance/viewpoint variations, illuminations, clutter, occlusion
+  - two stage detection methods are state-of-art. Faster R-CNN, Mask R-CNN
+  - Feature pyramid networks help detecting features at various scale
+- 2D images:
+  - regressing 3D boxes from monocular images(need good object size priors)
+  - stereo information helps to localize the box in 3D space(but quadratic error)
+
+Stereo
+simonella iccv 2021
+https://paperswithcode.com/paper/fcos-fully-convolutional-one-stage-object
+  - 1. predict a depth map
+    2. pseudo lidar
+    3. standard lidar based detection
+       
+frustum pointnet 2018
+  1. generate 2D proposals in the rgb image
+  2. extract point cloud from 3D object frustum
+  3. predict 3D bounding box from points in frustum via PointNET
+
+PointNet stages:
+  -segmentation of RGB point cloud
+  -translation of points such that centroid aligns with 3D box center
+  -3D bounding box regression
+
+![image](https://github.com/hajni77/Stereo-3D-object-detection/assets/78812524/60f08378-97b0-4ab5-8a7d-2c0cc2d47d2c)
+
+3DOP
+
+![image](https://github.com/hajni77/Stereo-3D-object-detection/assets/78812524/a6067e1a-3efb-4fa2-8ce0-84094f75abc4)
+
+models:
+https://github.com/HKUST-Aerial-Robotics/Stereo-RCNN
+
+Stereo R-CNN Overview:
+Stereo R-CNN is designed to detect and associate objects in stereo imagery (left and right images) while fully exploiting both sparse and dense, semantic and geometric information.
+It extends the popular Faster R-CNN architecture to handle stereo inputs.
+The Role of ROI Align:
+ROI Align (Region of Interest Align) is a technique used to extract features from irregularly shaped regions within an image.
+In the context of Stereo R-CNN, ROI Align is applied to left and right RoIs (Region of Interest) to align their features for accurate 3D bounding box estimation.
+Here’s how it works:
+Given a 2D bounding box (RoI) in the left image, we want to align the corresponding region in the right image.
+Instead of using traditional pooling methods (which can cause misalignment due to quantization), ROI Align computes the feature values at sub-pixel locations within the RoI.
+It interpolates the feature map values at these sub-pixel positions, resulting in more precise alignment.
+This alignment ensures that the features from the left and right images are accurately matched, which is crucial for estimating the 3D position of the object.
+Network Architecture:
+The Stereo R-CNN architecture includes several components:
+Stereo Region Proposal Network (RPN): Proposes candidate regions in both left and right images.
+Extra Branches: After the stereo RPN, extra branches predict sparse keypoints, viewpoints, and object dimensions.
+Coarse 3D Bounding Box Estimation: Combining the 2D left-right boxes with the predicted dimensions, a coarse 3D bounding box is calculated.
+Dense 3D Box Alignment Module: Finally, accurate 3D bounding boxes are refined using region-based photometric alignment with left and right RoIs.
+Advantages of ROI Align in Stereo R-CNN:
+Depth-Aware Alignment: ROI Align ensures that features from corresponding regions in the left and right images are accurately aligned, considering depth information.
+Robustness: It overcomes the limitations of quantization-based pooling methods, leading to more robust 3D object detection.
+State-of-the-Art Performance: Experiments on the challenging KITTI dataset demonstrate that Stereo R-CNN outperforms existing stereo-based methods by around 30% AP (Average Precision) on both 3D detection and localization tasks.
+
+
+Depth estimation:
+- https://github.com/megvii-basedetection/bevstereo
+- https://github.com/mileyan/pseudo_lidar
+- https://towardsdatascience.com/understanding-and-implementing-faster-r-cnn-a-step-by-step-guide-11acfff216b0
+- https://github.com/LiheYoung/Depth-Anything
+
+data
+- https://arxiv.org/pdf/2004.06320.pdf
+- https://ar5iv.labs.arxiv.org/html/1906.06310
+- https://armanasq.github.io/datsets/kitti/#data-format
+- https://arxiv.org/pdf/2103.03977.pdf
+
+3D object detection:
+
+- https://arxiv.org/pdf/2204.00106.pdf
+- https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/supported_tasks/lidar_det3d.html#qualitative-validation
+- https://arxiv.org/html/2309.17336v2
+- https://github.com/dvlab-research/3DSSD
+- https://github.com/swords123/IDA-3D
+- https://github.com/Owen-Liuyuxuan/visualDet3D
+- https://github.com/Vegeta2020/SE-SSD?tab=readme-ov-file

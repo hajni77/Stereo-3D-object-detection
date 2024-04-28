@@ -1,0 +1,21 @@
+configargparse==1.
+opencv-python
+scipy
+tensorboardx
+tqdm
+tensorflow==2.12.0
+pandas
+notebook
+numpy
+matplotlib
+seaborn
+ensure==1.0.2
+joblib
+types-PyYAML
+python-box==6.0.2
+Flask
+Flask-Cors
+gdown
+dvc
+mlflow==2.2.2
+-e .

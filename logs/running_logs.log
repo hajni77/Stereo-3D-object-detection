@@ -1,0 +1,50 @@
+[2024-04-29 00:33:34,925: INFO: main: >>>>>> Starting pipeline <<<<<<]
+[2024-04-29 01:10:57,276: INFO: main: >>>>>> Starting pipeline <<<<<<]
+[2024-04-29 01:10:57,277: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-04-29 01:10:57,278: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-04-29 01:10:57,279: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-04-29 01:10:57,296: INFO: common: created directory at: artifacts]
+[2024-04-29 01:10:57,314: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-04-29 01:10:57,315: INFO: data_ingestion: Downloading data from https://s3.eu-central-1.amazonaws.com/avg-kitti/data_object_label_2.zip into file artifacts/data_ingestion/data.zip]
+[2024-04-29 01:10:57,743: ERROR: main: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?/export=download&id=avg-kitti
+
+but Gdown can't. Please check connections and permissions.]
+Traceback (most recent call last):
+  File "C:\Users\User\miniconda3\envs\stereo_detection\lib\site-packages\gdown\download.py", line 253, in download
+    url = get_url_from_gdrive_confirmation(res.text)
+  File "C:\Users\User\miniconda3\envs\stereo_detection\lib\site-packages\gdown\download.py", line 54, in get_url_from_gdrive_confirmation
+    raise FileURLRetrievalError(
+gdown.exceptions.FileURLRetrievalError: Cannot retrieve the public link of the file. You may need to change the permission to 'Anyone with the link', or have had many accesses. Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 10, in <module>
+    data_ingestion.main()
+  File "E:\HAJNI\Egyetem_2024_1\Dipterv_github_code\Stereo-3D-object-detection\src\pseudo_pointpillars\pipeline\stage_01_data_ingestion.py", line 16, in main
+    data_ingestion.download_file()
+  File "e:\hajni\egyetem_2024_1\dipterv_github_code\stereo-3d-object-detection\src\pseudo_pointpillars\components\data_ingestion.py", line 33, in download_file
+    raise e
+  File "e:\hajni\egyetem_2024_1\dipterv_github_code\stereo-3d-object-detection\src\pseudo_pointpillars\components\data_ingestion.py", line 28, in download_file
+    gdown.download(prefix+file_id,zip_download_dir)
+  File "C:\Users\User\miniconda3\envs\stereo_detection\lib\site-packages\gdown\download.py", line 264, in download
+    raise FileURLRetrievalError(message)
+gdown.exceptions.FileURLRetrievalError: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?/export=download&id=avg-kitti
+
+but Gdown can't. Please check connections and permissions.
